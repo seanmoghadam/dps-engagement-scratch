@@ -1,0 +1,42 @@
+{
+  "name": "module",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "npx serve frontend/dist",
+    "dev": "vite",
+    "build": "run-p build:*",
+    "build:frontend": "vite build",
+    "preview": "run-p preview:*",
+    "preview:vite": "vite preview",
+    "preview:build": "vite build --watch",
+    "lint": "eslint .",
+    "postinstall": "rb-sync-translation-keys"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "react": "^19.2.5",
+    "react-dom": "^19.2.5",
+    "@cosmos/web-react": "^13.1.2",
+    "@rb-cep/custom-script": "1.9.0"
+  },
+  "devDependencies": {
+    "@cep/eslint": "^0.2.2",
+    "@types/node": "^22.19.17",
+    "@types/react": "^19.2.14",
+    "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-react": "^5.2.0",
+    "eslint": "^9.39.4",
+    "typescript": "^5.9.3",
+    "typescript-eslint": "^8.59.1",
+    "vite": "^7.3.2",
+    "npm-run-all": "^4.1.5"
+  },
+  "engines": {
+    "node": "24.x",
+    "npm": "11.x"
+  }
+}
