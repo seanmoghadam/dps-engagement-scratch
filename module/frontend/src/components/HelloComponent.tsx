@@ -131,11 +131,13 @@ export function HelloComponent() {
       if (over) {
         ctx.fillStyle = "rgba(11,13,16,0.82)";
         ctx.fillRect(0, 0, cv.width, cv.height);
-        ctx.fillStyle = "#fff";
+        ctx.fillStyle = "#DB0A40";
         ctx.font = "bold 22px sans-serif";
         ctx.fillText("STACK'D", cv.width / 2 - 48, cv.height / 2 - 6);
+        ctx.fillStyle = "#fff";
         ctx.font = "12px sans-serif";
-        ctx.fillText("press R or Restart", cv.width / 2 - 52, cv.height / 2 + 16);
+        ctx.fillText("Score counts line clears.", cv.width / 2 - 64, cv.height / 2 + 14);
+        ctx.fillText("press R or Restart", cv.width / 2 - 52, cv.height / 2 + 34);
       }
       raf = requestAnimationFrame(draw);
     };
