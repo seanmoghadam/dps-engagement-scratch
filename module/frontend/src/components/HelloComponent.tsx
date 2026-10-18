@@ -9,7 +9,7 @@ import { useRbAccount } from "../context/rb-account";
  */
 const COLS = 10;
 const ROWS = 18;
-const CELL = 22;
+const CELL = 32;
 const SHAPES: Record<string, number[][][]> = {
   I: [[[0,0,0,0],[1,1,1,1],[0,0,0,0],[0,0,0,0]]],
   O: [[[1,1],[1,1]]],
@@ -132,12 +132,12 @@ export function HelloComponent() {
         ctx.fillStyle = "rgba(11,13,16,0.82)";
         ctx.fillRect(0, 0, cv.width, cv.height);
         ctx.fillStyle = "#DB0A40";
-        ctx.font = "bold 22px sans-serif";
-        ctx.fillText("STACK'D", cv.width / 2 - 48, cv.height / 2 - 6);
+        ctx.font = "bold 32px sans-serif";
+        ctx.fillText("STACK'D", cv.width / 2 - 70, cv.height / 2 - 6);
         ctx.fillStyle = "#fff";
-        ctx.font = "12px sans-serif";
-        ctx.fillText("Score counts line clears.", cv.width / 2 - 64, cv.height / 2 + 14);
-        ctx.fillText("press R or Restart", cv.width / 2 - 52, cv.height / 2 + 34);
+        ctx.font = "16px sans-serif";
+        ctx.fillText("Score counts line clears.", cv.width / 2 - 86, cv.height / 2 + 20);
+        ctx.fillText("press R or Restart", cv.width / 2 - 70, cv.height / 2 + 46);
       }
       raf = requestAnimationFrame(draw);
     };
@@ -148,7 +148,7 @@ export function HelloComponent() {
   return (
     <div className="hello-component" style={{ textAlign: "center" }}>
       <h1>Stack — a Red Bull drop</h1>
-      <p style={{ opacity: 0.75, fontSize: 14 }}>
+      <p style={{ opacity: 0.75, fontSize: 18 }}>
         Engagement Builder artifact promotion demo — this bundle is served from platform storage, not a dev server.
       </p>
       <canvas
@@ -160,17 +160,17 @@ export function HelloComponent() {
         aria-label="Tetris-style stacking game. Arrow keys move and rotate, space drops, R restarts."
       />
       <div style={{ display: "flex", gap: "0.75rem", justifyContent: "center", alignItems: "center", margin: "0.75rem 0" }}>
-        <CosmosButton kind="secondary" size="small" onClick={() => act("left")}>◀</CosmosButton>
-        <CosmosButton kind="secondary" size="small" onClick={() => act("rotate")}>⟳</CosmosButton>
-        <CosmosButton kind="secondary" size="small" onClick={() => act("right")}>▶</CosmosButton>
-        <CosmosButton kind="secondary" size="small" onClick={() => act("drop")}>Drop</CosmosButton>
-        <CosmosButton kind="primary" size="small" onClick={() => act("restart")}>Restart</CosmosButton>
-        <strong style={{ fontVariantNumeric: "tabular-nums", minWidth: "6ch", fontSize: "1.5rem", color: score > 0 ? "#DB0A40" : undefined }}>Score {score}</strong>
+        <CosmosButton kind="secondary" size="medium" onClick={() => act("left")}>◀</CosmosButton>
+        <CosmosButton kind="secondary" size="medium" onClick={() => act("rotate")}>⟳</CosmosButton>
+        <CosmosButton kind="secondary" size="medium" onClick={() => act("right")}>▶</CosmosButton>
+        <CosmosButton kind="secondary" size="medium" onClick={() => act("drop")}>Drop</CosmosButton>
+        <CosmosButton kind="primary" size="medium" onClick={() => act("restart")}>Restart</CosmosButton>
+        <strong style={{ fontVariantNumeric: "tabular-nums", minWidth: "6ch", fontSize: "2rem", color: score > 0 ? "#DB0A40" : undefined }}>Score {score}</strong>
       </div>
       {user ? (
         <div>{user.firstName} — ready to stack</div>
       ) : (
-        <CosmosButton kind="secondary" size="small" onClick={() => loginWithRedirect()}>Login</CosmosButton>
+        <CosmosButton kind="secondary" size="medium" onClick={() => loginWithRedirect()}>Login</CosmosButton>
       )}
     </div>
   );
