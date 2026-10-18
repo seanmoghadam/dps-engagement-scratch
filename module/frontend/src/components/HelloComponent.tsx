@@ -163,7 +163,7 @@ export function HelloComponent() {
         <CosmosButton kind="secondary" size="small" onClick={() => act("right")}>▶</CosmosButton>
         <CosmosButton kind="secondary" size="small" onClick={() => act("drop")}>Drop</CosmosButton>
         <CosmosButton kind="primary" size="small" onClick={() => act("restart")}>Restart</CosmosButton>
-        <strong style={{ fontVariantNumeric: "tabular-nums", minWidth: "6ch" }}>Score {score}</strong>
+        <strong style={{ fontVariantNumeric: "tabular-nums", minWidth: "6ch", fontSize: "1.5rem", color: score > 0 ? "#DB0A40" : undefined }}>Score {score}</strong>
       </div>
       {user ? (
         <div>{user.firstName} — ready to stack</div>
